@@ -25,6 +25,9 @@ Grab the latest build from GitHub releases. Download, unzip, & launch.
 
 ## Usage
 
+Bring up whatever you need to screenshot, drag the Stamp applet into a sensible place nearby, then `Cmd-Shift-4` click-and-outline whatever portion of the screen you need.
+
+With the applet itself:
 - **Right-click** to access the menu: set metadata, toggle dark/light mode, switch timezone, dim/brighten, highlight, quit
 - **Drag** to reposition
 - **Cmd-Q** to quit (when focused)
