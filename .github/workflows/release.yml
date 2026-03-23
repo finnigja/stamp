@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: macos-14
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version string
+        run: |
+          VERSION=${{ github.ref_name }}
+          VERSION=${VERSION#v}
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+
+      - name: Build app bundle
+        run: ./Scripts/bundle.sh
+
+      - name: Zip app bundle
+        run: ditto -c -k --sequesterRsrc --keepParent Stamp.app Stamp-${{ env.VERSION }}.app.zip
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Stamp-${{ env.VERSION }}.app.zip
