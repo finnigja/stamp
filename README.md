@@ -1,12 +1,12 @@
 # Stamp
 
-Taking screenshots and tired of cramming the menu bar clock into frame or popping open date in a terminal?
+Taking screenshots and tired of cramming the menu bar clock into frame or running `date` in a terminal?
 
 Stamp is a tiny floating timestamp overlay for macOS. No menu bar, no Dock icon. Drag it anywhere on screen, take a screenshot.
 
 Perfect for audits, demos, bug reports, and compliance screenshots. (If your threat model includes a motivated forger, you need more than a floating clock. Stamp is for everyone else.)
 
-![Stamp screenshot](screenshot.png)
+![Stamp screencap](screencap.gif)
 
 ## Features
 
