@@ -6,6 +6,8 @@ Stamp is a tiny floating timestamp overlay for macOS. No menu bar, no Dock icon.
 
 Perfect for audits, demos, bug reports, and compliance screenshots. (If your threat model includes a motivated forger, you need more than a floating clock. Stamp is for everyone else.)
 
+![Stamp screenshot](screenshot.png)
+
 ## Features
 
 - Date, time, and timezone on a single line
