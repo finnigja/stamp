@@ -29,3 +29,21 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: Stamp-${{ env.VERSION }}.app.zip
+
+      - name: Compute sha256
+        run: echo "SHA256=$(shasum -a 256 Stamp-${{ env.VERSION }}.app.zip | awk '{print $1}')" >> $GITHUB_ENV
+
+      - name: Bump homebrew-tap cask
+        env:
+          GH_TOKEN: ${{ secrets.TAP_REPO_TOKEN }}
+        run: |
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/finnigja/homebrew-tap.git" tap
+          cd tap
+          sed -i.bak -E "s/^  version \".*\"/  version \"${VERSION}\"/" Casks/stamp.rb
+          sed -i.bak -E "s/^  sha256 \".*\"/  sha256 \"${SHA256}\"/" Casks/stamp.rb
+          rm Casks/stamp.rb.bak
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Casks/stamp.rb
+          git commit -m "stamp ${VERSION}"
+          git push
