@@ -44,4 +44,6 @@ cat > "$APP/Contents/Info.plist" << EOF
 </plist>
 EOF
 
+codesign --force --deep --sign - "$APP"
+
 echo "Built $APP"

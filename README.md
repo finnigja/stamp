@@ -19,9 +19,11 @@ Perfect for audits, demos, bug reports, and compliance screenshots. (If your thr
 
 ## Getting Started
 
-Grab the latest build from GitHub releases. Download, unzip, & launch.
+Install using brew, `$ brew install --cask finnigja/tap/stamp`
 
-> **Note:** Stamp is not signed or notarized (yet?). macOS Gatekeeper will block it on first launch. Run `xattr -cr /Applications/Stamp.app` if you trust this packaging (with path matching where you've put the app), or build from source for yourself as below.
+Or grab the latest build from GitHub releases, unzip, & launch.
+
+> **Note:** Stamp is not signed or notarized (yet?). macOS Gatekeeper will block it on first launch. Brew will handle this for you, but you can run `xattr -cr /Applications/Stamp.app` if you trust this packaging (with path matching where you've put the app). Alternatively, build from source for yourself as below.
 
 ## Usage
 
